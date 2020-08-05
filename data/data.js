@@ -27,7 +27,7 @@ export const TEACHERS = [
         'u2',
         require('../assets/miguel-perfil.jpeg'),
         'Miguel Antonio Atencia',
-        'Profesor de Cosmetologia',
+        'Profesor de Ingles',
         'Cartagena',
         [
             {

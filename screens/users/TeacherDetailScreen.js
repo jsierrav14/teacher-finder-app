@@ -1,14 +1,18 @@
 import React from 'react'
-import { View, StyleSheet, Image, Text, ScrollView, FlatList} from 'react-native'
+import { View, StyleSheet, Image, Text, ScrollView, FlatList, Button} from 'react-native'
 import { TEACHERS,TOPICS} from '../../data/data';
 import TopicItem from '../../components/UI/TopicItem';
-
+import socket from '../../socket'
 const TeacherDetailScreen = props => {
 
     const teacherId = props.navigation.getParam('teacherId');
 
     const teacher = TEACHERS.find(item => item.id === teacherId)
     
+    sendMessage =()=>{
+       
+        socket.emit('on',teacher);
+    }
     return (
         <ScrollView style={styles.container}>
             <View style={styles.contImage}>
@@ -32,6 +36,10 @@ const TeacherDetailScreen = props => {
                   {
                       teacher.topics.map(item=><TopicItem key={item.id} name={item.name}/>)
                   }
+                </View>
+
+                <View>
+                <Button title="chat" onPress={()=>sendMessage()}/>
                 </View>
 
             </View>
