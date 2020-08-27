@@ -1,12 +1,15 @@
 class Teacher {
 
-    constructor(id,image,name,description,address,topics){
+    constructor(id,image,firstName,lastName,description,address,topics,lat,lng){
        this.id=id;
        this.image = image,
-       this.name=name;
+       this.firstName=firstName;
+       this.lastName = lastName;
        this.description = description;
        this.address = address;
        this.topics = topics
+       this.lat = lat;
+       this.lng = lng;
     }
 }
 
