@@ -2,16 +2,14 @@ import React from 'react'
 import { View, StyleSheet, Image, Text, ScrollView, FlatList, Button} from 'react-native'
 import { TEACHERS,TOPICS} from '../../data/data';
 import TopicItem from '../../components/UI/TopicItem';
-import socket from '../../socket'
 const TeacherDetailScreen = props => {
 
     const teacherId = props.navigation.getParam('teacherId');
 
     const teacher = TEACHERS.find(item => item.id === teacherId)
     
-    sendMessage =()=>{
-       
-        socket.emit('on',teacher);
+    navigateToChat=()=>{
+        props.navigation.navigate('Chat',{teacherId:teacherId})
     }
     return (
         <ScrollView style={styles.container}>
@@ -39,7 +37,7 @@ const TeacherDetailScreen = props => {
                 </View>
 
                 <View>
-                <Button title="chat" onPress={()=>sendMessage()}/>
+                <Button title="chat" onPress={()=>navigateToChat()}/>
                 </View>
 
             </View>

@@ -7,6 +7,7 @@ import Colors from '../constant/Colors'
 import TeacherListScreen from '../screens/users/TeacherListScreen'
 import FilterTeachersScreen from '../screens/users/FilterTeachersScreen'
 import TeacherDetailScreen from '../screens/users/TeacherDetailScreen'
+import ChatScreen from '../screens/chat/ChatScreen'
 
 
 const defaultNavigationOptions = {
@@ -19,7 +20,8 @@ const defaultNavigationOptions = {
 const FilterNavigation = createStackNavigator({
     FilterNavigation: FilterTeachersScreen,
     TeacherList:TeacherListScreen,
-    TeacherDetail:TeacherDetailScreen
+    TeacherDetail:TeacherDetailScreen,
+    Chat:ChatScreen
 }, {
     defaultNavigationOptions: defaultNavigationOptions
 }
